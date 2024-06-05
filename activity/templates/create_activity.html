@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <main class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 mt-5">
+                <form action="/activity/create/" method="POST" class="card card-body">
+                    <h1 class="text-center" >create activity</h1>
+                        {{error}}
+                        {% csrf_token %}
+                        {{form}}
+                        <button class="btn btn-success"> 
+                            Save
+                        </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

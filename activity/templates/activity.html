@@ -1,0 +1,34 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-5 ">
+            <div class="card card-body">
+            <h1 class="text-center">Activity pending</h1>
+            
+            <ul class="list-group">
+                {% for activity in activity %}
+                    <a class="list-group-item" href="{% url 'activity_detail' activity.id %}">
+                        <header class="d-flex justify-content-between">
+                            {% if activity.important %}
+                            <h4 class="fw-bold text-success">{{activity.title}}</h4>
+                            {% else %}
+                            <h4 class="fw-bold">{{activity.title}}</h4>
+                            {% endif %}
+                            <p>{{activity.user.username}}</p>
+                        </header>
+                        <p>{{activity.description}}</p>
+                        <p>{{activity.datecompleted|date:'M j Y:i'}}</p>
+                    </a>
+
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+    </div>
+</main>
+{% endblock %}

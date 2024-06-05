@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="card card-body">
+                <h2 class="text-center">{{activity.title}}</h2>
+                        {{error}}
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{form.as_p}}
+                            <button class="btn btn-success">
+                                Update
+                            </button>
+                        </form>
+                        <div class="d-inline-flex gap-1 mt-2">
+                        <form action="{% url 'complete_activity' activity.id %}" method="POST">
+                            {% csrf_token %}
+                            <button class="btn btn-success">
+                                Complete
+                            </button>
+                        </form>
+    
+                        <form action="{% url 'delete_activity' activity.id %}" method="POST">
+                            {% csrf_token %}
+                            <button class="btn btn-success">
+                                Delete
+                            </button>
+                        </form>
+                    </div>
+            </div>
+            </div>
+        </div>
+    </main>
+
+
+{% endblock %}

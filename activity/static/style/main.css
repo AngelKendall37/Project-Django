@@ -1,0 +1,7 @@
+body{   
+    background: #0f3443; 
+    background: -moz-linear-gradient(left, #0f3443 0%, #34e69f 100%); 
+    background: -webkit-linear-gradient(left, #0f3443 0%,#34e69f 100%); 
+    background: linear-gradient(to right, #0f3443 0%,#34e69f 100%);  
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f3443', endColorstr='#34e69f',GradientType=1 );
+}
